@@ -13,8 +13,13 @@ body {
     text-align: center;
 }
 
-table {
-    width: 100%;
+.footer {
+    margin: 0 100px 10px 0;
+    font-size: 10px;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right:0;
 }
 
 .nav-table {
@@ -30,12 +35,20 @@ table {
 
 .tcol {
     display:table-cell;
+    padding:10px 0 20px 0;
 }
 
 .twrapper {
     display:inline-block;
     text-align: center;
     width:600px;
+}
+
+.about {
+    display:inline-block;
+    text-align: left;
+    width:600px;
+    margin-top:20px;
 }
 
 .content-table {
@@ -52,7 +65,7 @@ table {
     text-align: left;
     padding-left: 30px;
     font-size:13px;
-    display:inline-block;
+    vertical-align: top;
 }
 
 .thumbnail img {
@@ -102,6 +115,23 @@ table {
 
 .gallery {
     text-align: center;
+}
+
+.back {
+    margin-top:20px;
+}
+
+.frontpage img:hover {
+    opacity: 0.7;
+}
+
+.frontpage img{
+    width: 80%;
+    border:1px solid #999;
+}
+
+.frontlayout {
+    padding-left: 4%;
 }
 
 a {
@@ -175,15 +205,6 @@ div.header a:hover {
 }
 .image_info {
     margin-top: 3px;
-}
-
-#footer {
-    margin-bottom:10px;
-    font-size: 10px;
-    text-align: center;
-    position:fixed;
-    bottom: 0px;
-    width:100%;
 }
 
 .top_sidebar {
