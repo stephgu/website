@@ -1,0 +1,165 @@
+<html>
+  <head>
+      <title>steph gu - email designs</title> 
+      <link href="style.css" rel="stylesheet">
+      <LINK REL="SHORTCUT ICON" HREF="images/icon.png">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script src='scripts/stephport.js'></script>
+  </head>
+  <body>
+      <div id="header"></div>
+
+      <div class="row subtitle">
+        DRS Email Designs
+      </div>
+
+
+      <div class="row subtitle-desc">
+        <p>Creating customer emails for an Amazon Dash Replenishment Service (DRS) device </p>
+      </div>
+
+      <div class="row headerpic">
+        <p><img src="images/drsemailheaderpic.png"></p>
+      </div>
+      
+      <div class="row block-text">
+        <div class="widercol">
+          <p>
+            <b>Problem: </b> Customer had no feedback on various actions they would take on their DRS devices. For example when the customer registered, changed their status, or encountered various problems (no payment method set, ect), they would have no confirmation that any of these actions occured. 
+          </p>
+          
+          <p> 
+            <b>Goals</b>: Give customers descriptive, easy to digest, and comprehensive knowledge of their devices. Make sure that customers get important messages to help them make more informed choices. 
+          </p> 
+          <p>
+            <b> Solution: </b> Create customer emails that notified the customer whenever they completed a significant action on their DRS devices. 
+
+          </p>
+        </div>
+        <div class="widercol">
+          <p>
+            <b>My roles: </b> Interface design, visual design, user research/testing, software development, systems design
+          </p>
+          
+          <p> 
+            <b>Tools</b>: Photoshop, HTML, CSS, email templating, Java
+          </p> 
+          <p>
+            <b> Project duration: </b> 2 months
+          </p>
+
+          <p> <b>Features:</b> 
+            <li> Subscription changed / registration </li>
+            <li> Order created </li> 
+            <li> Deregistration </li> 
+            <li> Error cases (incomplete payment, incomplete shipping/billing addresses, out of stock item, generic) </li> 
+          </p>
+        </div> 
+      </div>
+
+      <div class="row block-text block-header">
+        Research and Initial requirements
+      </div> 
+
+      <div class="row block-text">
+        <p>
+          <b>Initial requirements: </b> The base requirements were to make an email each for when a user registers a device, when a user changes their subscription method for an item's auto-reorder functionality, when a user places an order, and various error cases the user could receive. One of the emails that was first given to me as a potential template was an email based on an existing Amazon service called Subscribe and Save (similar to DRS). It was an email that provided the same functionality that we wanted about items that were being reordered automatically. An example of one such email is below: 
+
+          <div class="center"><p><img src="" width="300" height="600"/></p></div>
+
+          I did a first pass implementation following these guidelines. 
+
+          <div class="center"><p><img src="" width="300" height="600"/></p></div>
+
+          However, I did not like these emails very much. In addition to these emails not being very pretty, the email itself was very dense and hard to read. There was way too much text and it was not obvious which information was important. I decided that this template was unacceptable for a user (this type of email would've gone straight to my spam folder). Because we did not have a UX designer for this project, I decided to tackle the challenge of designing an easier to read and better looking template. 
+        </p>
+        </p>
+          <b>User research</b>: I began doing some research on what makes an email one you want to read, or one that goes into the trash. I talked to various people inside my team/Amazon (very technology savvy), and people outside Amazon who were not as technology savvy. Surprisingly there were very few differences. However one key difference was that in error cases, people that were more technology savvy seemed to have a better understanding of what the problem was/where to go to fix the problem. People with less experience seemed to sometimes get lost despite there being directions on what to do to fix the problem. This made me think that designing the error case emails should probably be a bit different/more specialized than the other emails, and should really focus on alerting the user to a problem, and providing them an unmissable target they could go to for help. Some common important things between the groups were: 
+          <li>Too busy to read most emails</li>
+          <li>Liked seeing pictures</li>
+          <li>Only scaned important titles and headers (didn't read small text)</li> 
+          <li>Gravitated towards reading things that were colored</li>
+          <li>The longer the email, the less likely to read at all</li><br>
+
+          I also did some research on various emails from different companies that I thought gave me information in concise and easy ways. I looked to see what I could learn from the layout of such emails, where they placed the text, how big the text was, where they placed key elements of the email, if/when/how they used colors, ect. 
+
+        </p>
+      </div> 
+      
+      <div class="row block-text block-header">
+        Initial Prototype
+      </div> 
+
+      <div class="row block-text">
+        <p>
+          Based on what I had learned I created my initial improved prototype/designs. Some examples below: 
+
+          <div class="center"><p><img src="" width="300" height="600"/></p></div>
+
+          Considerations I made while designing these:  
+          <li>Keep text as short as possible</li>
+          <li>Make font big so it's easier to digest</li>
+          <li>Make the most important statement 1 sentence, and make it a different color to indicate importance</li>
+          <li>Always use pictures instead of text when applicable</li>
+          <li>Keep important sections divded by obvious headers/spacing</li>
+          <li>Create items in formated rows and colums for more organized processing with a single glance</li>
+          <li>Use red and green colors to indicate good and bad states on the device</li>
+          <li>For error case emails, created a big button in the middle of the screen that would point to a resolution case </li> 
+        </p>
+      </div> 
+
+
+      <div class="row block-text block-header">
+        User testing
+      </div> 
+
+      <div class="row block-text">
+        <p>
+          I released my emails on a small user group to see how users interacted with the emails and get some feedback. I let them go through the whole flow for various different cases (registration, error cases, ect), and recorded what their reaction to the emails were. <br><br>
+
+          <b>Pros</b>
+          <li>No one seemed to have trouble digesting the information</li>
+          <li>Lots of positive feedback about the "error case" emails - people just clicked the link and it redirected them to a place where they could fix their problem </li>
+          <li>Since each email was approx 3 sentences, everyone read the whole email</li>
+          <li>People read the email very quickly</li>
+          <b>Cons</b>
+          <li>A lot of people did not realize button was clickable</li>
+          <li>A lot of people thought the "subscribed" labels were clickable (fair point, since they were very similar to the other actually clickable buttons)</li>
+          <li>Didn't feel that the email was coming from Amazon </li>
+        </p>
+      </div> 
+
+      <div class="row block-text block-header">
+        Final iteration
+      </div> 
+
+      <div class="row block-text">
+        <p>
+          I included all of the previous feedback into my final design. Examples below. 
+
+          <div class="row">
+            <div class="preview" align="center">
+              <img name="preview" id="preview" src="images/drsemail_subscribe.png" alt="No Image Loaded"/>
+            </div>
+
+            <div class="divider"> </div>
+
+            <div class="gallery-thumbs" align="center">
+              <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/drsemail_subscribe.png" alt="Image Not Loaded"/>
+              <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/drsemail_order.png" alt="Image Not Loaded"/>
+              <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/drsemail_dereg.png" alt="Image Not Loaded"/>
+              <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/drsemail_fixup.png" alt="Image Not Loaded"/>
+            </div><br/>
+          </div>
+
+          I addressed the concerns from the previous testing as such: 
+          <li>Non clickable buttons: I used Amazon buttons instead of creating my own buttons. This killed two birds with 1 stone as it looked more like an Amazon email and also made sure the user knew exactly what was clickable and what was not. </li>
+          <li>Changed styling of the "suscribed" label to look less like a clickable item and more like a label (transparancey helps it look less "3d" and more like a sticker)</li>
+          <li>Changed a lot of the styling to coincide with Amazon's guidelines.</li>
+          <li>Made use of different color backgrounds to highlight the body of the email</li>
+        </p>
+      </div> 
+      <div style="height:100px"> </div>
+      <div id="footer"></div>
+  </body>    
+</html>

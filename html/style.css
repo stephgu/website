@@ -6,11 +6,12 @@
 
 body {
     font-family: roboto;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     margin: 0;
     padding: 0;
     text-align: center;
+    background: #FAFAFA;
 }
 
 .footer {
@@ -25,7 +26,7 @@ body {
 .nav-table {
     width: 100%;
     text-align: center;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .trow {
@@ -36,6 +37,7 @@ body {
 .tcol {
     display:table-cell;
     padding:10px 0 20px 0;
+    vertical-align: middle;
 }
 
 .twrapper {
@@ -64,7 +66,7 @@ body {
 .description {
     text-align: left;
     padding-left: 30px;
-    font-size:13px;
+    font-size:15px;
     vertical-align: top;
 }
 
@@ -77,7 +79,7 @@ body {
 }
 
 .subtitle {
-    font-size:16px;
+    font-size:20px;
     text-align: center!important;
 }
 
@@ -103,7 +105,7 @@ body {
     margin-bottom:20px;
 }
 .preview img {
-    height: 600px;
+    height: 800px;
     border:1px solid #999;
 }
 
@@ -160,12 +162,22 @@ div.header a:hover {
     display: inline-block;
 }
 
+.block-text {
+    text-align: left;
+}
+
+.block-header {
+    font-size:20px;
+    font-style:italic;
+}
+
 .row {
     margin: auto;
     max-width: 950px;
     padding-left: 1%;
     width: 80%;
 }
+
 .col {
     display: inline-block;
     min-width: 100px;
@@ -173,6 +185,16 @@ div.header a:hover {
     text-align: left;
     width: 30.8%;
 }
+
+.widercol {
+    display: inline-block;
+    min-width: 100px;
+    padding: 2% 2% 2% 0;
+    text-align: left;
+    width: 48%;
+    float:left;
+}
+
 .col a {
     padding-top: 10px;
 }
@@ -202,6 +224,10 @@ div.header a:hover {
     opacity: 0.7;
 }
 .thumb a {
+}
+
+.headerpic img{
+    max-height:400px;
 }
 .image_info {
     margin-top: 3px;

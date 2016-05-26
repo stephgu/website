@@ -1,0 +1,35 @@
+<html>
+  <head>
+      <title>steph gu - setup ui samples</title> 
+      <link href="style.css" rel="stylesheet">
+      <LINK REL="SHORTCUT ICON" HREF="images/icon.png">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script src='scripts/stephport.js'></script>
+  </head>
+  <body>
+      <div id="header"></div>
+
+      <div class="row subtitle">
+        DRS Setup UI Examples
+      </div>
+      <div class="row subtitle-desc">
+        <p>Product Selection / Overview / Address & Payment / Settings</p>
+      </div>
+
+      <div class="row">
+        <div class="preview-drssetup" align="center">
+          <img name="preview" id="preview" src="images/drssetup_productselection.png" alt="No Image Loaded"/>
+        </div>
+
+        <div class="divider"> </div>
+
+        <div class="gallery-thumbs" align="center">
+          <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/drssetup_productselection.png" alt="Image Not Loaded"/>
+          <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/drssetup_overview.png" alt="Image Not Loaded"/>
+          <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/drssetup_address.png" alt="Image Not Loaded"/>
+          <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/drssetup_settings.png" alt="Image Not Loaded"/>
+        </div><br/>
+      </div>
+      <div id="footer"></div>
+  </body>    
+</html>
