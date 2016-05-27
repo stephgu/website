@@ -21,7 +21,7 @@
       <div class="row headerpic">
         <p><img src="images/drsemailheaderpic.png"></p>
       </div>
-      
+
       <div class="row block-text">
         <div class="widercol">
           <p>
@@ -32,8 +32,7 @@
             <b>Goals</b>: Give customers descriptive, easy to digest, and comprehensive knowledge of their devices. Make sure that customers get important messages to help them make more informed choices. 
           </p> 
           <p>
-            <b> Solution: </b> Create customer emails that notified the customer whenever they completed a significant action on their DRS devices. 
-
+            <b> Solution: </b> Create customer emails that notified the customer whenever they completed a significant action on their DRS devices.
           </p>
         </div>
         <div class="widercol">
@@ -59,19 +58,33 @@
 
       <div class="row block-text block-header">
         Research and Initial requirements
-      </div> 
+      </div>
 
       <div class="row block-text">
         <p>
-          <b>Initial requirements: </b> The base requirements were to make an email each for when a user registers a device, when a user changes their subscription method for an item's auto-reorder functionality, when a user places an order, and various error cases the user could receive. One of the emails that was first given to me as a potential template was an email based on an existing Amazon service called Subscribe and Save (similar to DRS). It was an email that provided the same functionality that we wanted about items that were being reordered automatically. An example of one such email is below: 
+          <b>Initial requirements: </b> The base requirements were to make an email each for when a user registers a device, when a user changes their subscription method for an item's auto-reorder functionality, when a user places an order, and various error cases the user could receive. One of the emails that was first given to me as a potential template was an email based on an existing Amazon service called Subscribe and Save (similar to DRS). It was an email that provided the same functionality that we wanted about items that were being reordered automatically. An example of one such email is below:
 
-          <div class="center"><p><img src="" width="300" height="600"/></p></div>
+          <div class="row">
+              <div class="preview" align="center">
+                  <img name="preview3" id="preview3" style="height:600px;" src="images/initreqemail.png" alt="No Image Loaded"/>
+              </div>
+
+              <div class="divider"> </div>
+
+              <div class="gallery-thumbs" align="center">
+                  <img onmouseover="document.getElementById('preview3').src=document.getElementById('img8').src" id="img8" src="images/initreqemail.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview3').src=document.getElementById('img9').src" id="img9" src="images/initreqemails2.png" alt="Image Not Loaded"/>
+              </div><br/>
+          </div>
+
 
           I did a first pass implementation following these guidelines. 
 
-          <div class="center"><p><img src="" width="300" height="600"/></p></div>
+          <div class="center"><p><img src="images/initreqemailme.png" style="max-height:450px;"/></p></div>
 
-          However, I did not like these emails very much. In addition to these emails not being very pretty, the email itself was very dense and hard to read. There was way too much text and it was not obvious which information was important. I decided that this template was unacceptable for a user (this type of email would've gone straight to my spam folder). Because we did not have a UX designer for this project, I decided to tackle the challenge of designing an easier to read and better looking template. 
+          However, I did not like these emails very much. In addition to these emails not being very pretty, the email itself was very dense and hard to read. There was
+          way too much text and it was not obvious which information was important. It was also hard to tell what actions to take upon receiving this email, or if any
+          actions were needed at all. I decided that this template was unacceptable for a user (this type of email would've gone straight to my spam folder). Because we did not have a UX designer for this project, I decided to tackle the challenge of designing an easier to read and better looking template.
         </p>
         </p>
           <b>User research</b>: I began doing some research on what makes an email one you want to read, or one that goes into the trash. I talked to various people inside my team/Amazon (very technology savvy), and people outside Amazon who were not as technology savvy. Surprisingly there were very few differences. However one key difference was that in error cases, people that were more technology savvy seemed to have a better understanding of what the problem was/where to go to fix the problem. People with less experience seemed to sometimes get lost despite there being directions on what to do to fix the problem. This made me think that designing the error case emails should probably be a bit different/more specialized than the other emails, and should really focus on alerting the user to a problem, and providing them an unmissable target they could go to for help. Some common important things between the groups were: 
@@ -92,9 +105,22 @@
 
       <div class="row block-text">
         <p>
-          Based on what I had learned I created my initial improved prototype/designs. Some examples below: 
+          Based on what I had learned I created my initial improved prototype/designs. Some examples below:
 
-          <div class="center"><p><img src="" width="300" height="600"/></p></div>
+          <div class="row center">
+              <div class="preview" align="center">
+                  <img name="preview" id="preview" style="height:500px;" src="images/emailsinitsub.png" alt="No Image Loaded"/>
+              </div>
+
+              <div class="divider"> </div>
+
+              <div class="gallery-thumbs" align="center">
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/emailsinitsub.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/emailsinitorder.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/emailsinitdereg.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/emailsinitincorrect.png" alt="Image Not Loaded"/>
+              </div><br/>
+          </div>
 
           Considerations I made while designing these:  
           <li>Keep text as short as possible</li>
@@ -139,16 +165,16 @@
 
           <div class="row">
             <div class="preview" align="center">
-              <img name="preview" id="preview" src="images/drsemail_subscribe.png" alt="No Image Loaded"/>
+              <img name="preview2" id="preview2" style="height:700px;" src="images/emailsfinalsub.png" alt="No Image Loaded"/>
             </div>
 
             <div class="divider"> </div>
 
             <div class="gallery-thumbs" align="center">
-              <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/drsemail_subscribe.png" alt="Image Not Loaded"/>
-              <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/drsemail_order.png" alt="Image Not Loaded"/>
-              <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/drsemail_dereg.png" alt="Image Not Loaded"/>
-              <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/drsemail_fixup.png" alt="Image Not Loaded"/>
+              <img onmouseover="document.getElementById('preview2').src=document.getElementById('img10').src" id="img10" src="images/emailsfinalsub.png" alt="Image Not Loaded"/>
+              <img onmouseover="document.getElementById('preview2').src=document.getElementById('img11').src" id="img11" src="images/emailsfinalorder.png" alt="Image Not Loaded"/>
+              <img onmouseover="document.getElementById('preview2').src=document.getElementById('img12').src" id="img12" src="images/emailsfinaldereg2.png" alt="Image Not Loaded"/>
+              <img onmouseover="document.getElementById('preview2').src=document.getElementById('img13').src" id="img13" src="images/emailsfinalerror2.png" alt="Image Not Loaded"/>
             </div><br/>
           </div>
 
@@ -157,9 +183,10 @@
           <li>Changed styling of the "suscribed" label to look less like a clickable item and more like a label (transparancey helps it look less "3d" and more like a sticker)</li>
           <li>Changed a lot of the styling to coincide with Amazon's guidelines.</li>
           <li>Made use of different color backgrounds to highlight the body of the email</li>
+          <li>Minimized white space for more professional looking email</li>
         </p>
       </div> 
-      <div style="height:100px"> </div>
+      <div class="row" style="height:100px"> </div>
       <div id="footer"></div>
   </body>    
 </html>

@@ -1,0 +1,257 @@
+<html>
+  <head>
+      <title>steph gu - setup designs</title>
+      <link href="style.css" rel="stylesheet">
+      <LINK REL="SHORTCUT ICON" HREF="images/icon.png">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script src='scripts/stephport.js'></script>
+  </head>
+  <body>
+      <div id="header"></div>
+
+      <div class="row subtitle">
+        DRS Setup Designs
+      </div>
+
+
+      <div class="row subtitle-desc">
+        <p>Creating a setup user interface to register an Amazon Dash Replenishment Service (DRS) device </p>
+      </div>
+
+      <div class="row headerpic">
+        <p><img src="images/drsemailheaderpic.png"></p>
+      </div>
+
+      <div class="row block-text">
+        <div class="widercol">
+          <p>
+            <b>Problem: </b> Customer had no way to register a DRS device after purchasing it. They didn't have a way to select items that they wanted their DRS
+              devices to purchase or a way to send it to a particular location. They didn't have a way to order products or cancel the ability of the reordering feature.
+          </p>
+          
+          <p> 
+            <b>Goals</b>: Give customers a pain-free, one time experience that they can go through to completely and full register their device.
+          </p> 
+          <p>
+            <b> Solution: </b> Create a setup experience that allows the customer to set all the features that are essential to the device functioning properly. Also create
+              a settings page that the customer can come back to and change any of the properties that they first set.
+          </p>
+        </div>
+        <div class="widercol">
+          <p>
+            <b>My roles: </b> Interface design, user research/testing, multi-platform support, software development, systems design
+          </p>
+          
+          <p> 
+            <b>Tools</b>: Photoshop, HTML, CSS, Javascript, Java
+          </p> 
+          <p>
+            <b> Project duration: </b> ~6 months
+          </p>
+
+          <p> <b>Features:</b> 
+            <li> Allow customers to register device through Amazon </li>
+            <li> Allow customers to select various different product for their device </li>
+            <li> Allow customers to select order payment/shiping information </li>
+            <li> Allow customers to stop reordering products/reenable ordering products </li>
+            <li> Allow customers to go back and change any of these settings at a later point in time </li>
+          </p>
+        </div> 
+      </div>
+
+      <div class="row block-text block-header">
+        Initial design & Improvements
+      </div>
+
+      <div class="row block-text">
+        <p>
+          For this project we already had a main UX lead, so I mainly focused on development work. I show some of the preliminary designs I received below.
+          However through the process of looking through the initial designs and actually implementing them, I came upon many subtleties not expressed in the original
+          design. When I felt that these problems created a subpar user experience, I would redesign several alternatives and test them with my team. I would then
+          present them to our main UX lead and collaborate with him to find a mutual solution.
+          I'd
+          like to talk about some of the
+          significant changes below.
+          </p>
+      </div> 
+      
+      <div class="row block-text block-header">
+          Canceling items
+      </div> 
+
+      <div class="row block-text">
+        <p>
+          <b>Use case</b>: When a user selects an item, it means that user wants the DRS device to reorder that item when the device runs low on said item. After
+            selecting an item at setup, users are allowed to change that item later through a settings page. The following is an initial design for allowing the user
+            to "stop selecting" a certain item.
+
+          <div class="row center">
+              <div class="preview" align="center">
+                  <img name="preview" id="preview" style="height:500px;" src="images/emailsinitsub.png" alt="No Image Loaded"/>
+              </div>
+
+              <div class="divider"> </div>
+
+              <div class="gallery-thumbs" align="center">
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/emailsinitsub.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/emailsinitorder.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/emailsinitdereg.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/emailsinitincorrect.png" alt="Image Not Loaded"/>
+              </div><br/>
+          </div>
+
+          I saw several things I thought made for a bad user experience.
+          <li>Allowing "stop autoreorder" as a radio button in and of itself was highly confusing. What would the user do, select that option and then hit the "select"
+              button? </li>
+          <li>What would happen after the user hit "select"? Would it redirect to the settings page?</li>
+          <li>The wording was extremely confusing. It was unclear what "stop autoreorder" really meant. Did it mean, I don't want this particular item to be
+              reordered anymore, but I still want it to be selected. Or did it mean "I no longer want this item to appear in any capacity on my settings page." </li>
+          <li>If the user thought that "stop autoreorder" meant stop it for that particular item, how would we should the user that only that item and not another item
+          was not being reordered? Would this require another element in the settings page to display this? What would it then mean to have the global "auto
+              reorder" toggle on or off?</li>
+        </p>
+          <p>
+              <b>Alternative: </b> I proposed that instead of having this as a radio button, we put something in line with the element itself (such as a small 'x', or a
+              'cancel' bar)
+              that would simply
+              deselect the radio button immediately. This provided many benefits:
+              <li>Allowed user to see exactly what action clicking the button did, without having any sort of magical redirects</li>
+                <li>Removed the confusion around whether this item would be "auto reordered" or not, because once it was deselected it was clear that the item was no
+                    longer tied with the device </li>
+                <li>Did not confuse the item element with any other UI on the screen - aka the radio button still only served 1 single purpose: to select an item</li>
+          </p>
+      </div> 
+
+
+      <div class="row block-text block-header">
+        Non selected items
+      </div>
+
+      <div class="row block-text">
+          <p>
+              <b>Use case</b>: The user can select multiple items for each device. For example in the case of a printer, the user can select Black, Magenta, and Cyan inks.
+              The user can also choose not to select items for these categories if they do not want to order a specific color (ex: they only want to print black and white
+              photos). The initial designs (below) did not clearly display this case to the user. When the user did not select any items for a particular category, that
+              category simply did not appear in the summary or settings page. If the user accidentally skipped a slot, it was difficult to be reminded of how to
+              navigate to a screen that would allow them to select the item.
+
+          <div class="row center">
+              <div class="preview" align="center">
+                  <img name="preview" id="preview" style="height:500px;" src="images/emailsinitsub.png" alt="No Image Loaded"/>
+              </div>
+
+              <div class="divider"> </div>
+
+              <div class="gallery-thumbs" align="center">
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/emailsinitsub.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/emailsinitorder.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/emailsinitdereg.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/emailsinitincorrect.png" alt="Image Not Loaded"/>
+              </div><br/>
+          </div>
+
+          <p>
+              <b>Alternative: </b> I proposed an add-on to the design that would include each category that the user had NOT selected as an "emtpy slot". This provided many benefits:
+          <li>The "empty slot" followed the same paradigm as the "full slot" so it did not disrupt the UI. </li>
+          <li>The empty slot was clearly marked with a "+" to indicate it was empty and the user needed to add an item.</li>
+          <li>The empty slot was clearly marked with the words "SKIPPED" to indicate it had been skipped during the setup process.</li>
+          <li>The user could easily navigate to the desired area to fix the problem with a single tap, with a widely known chevron (>) as the affordance</li>
+          </p>
+      </div>
+
+      <div class="row block-text block-header">
+          Skipping an item
+      </div>
+
+      <div class="row block-text">
+          <p>
+              <b>Use case</b>: The user has an option to skip a category during setup. Initial designs also used this "skip" to clear a selection if the selection was
+              already present. For example, if the user selected an item, then went back to that item at a later time in the setup process, then clicked "skip", it would
+              act as if the user never selected that product.
+
+          <div class="row center">
+              <div class="preview" align="center">
+                  <img name="preview" id="preview" style="height:500px;" src="images/emailsinitsub.png" alt="No Image Loaded"/>
+              </div>
+
+              <div class="divider"> </div>
+
+              <div class="gallery-thumbs" align="center">
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/emailsinitsub.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/emailsinitorder.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/emailsinitdereg.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/emailsinitincorrect.png" alt="Image Not Loaded"/>
+              </div><br/>
+          </div>
+
+          <p>
+              To me this seemed confusing:
+              <li>Gives "skip" two meanings: What if the user was simply double checking the item details, then wanted to "skip" aka move on to the next slot?</li>
+                <li> The only indication to the user that skip does two functionalities was in the top navigation bar and the summary page. Both of these were easily
+                    dismissable and thus didn't seem like good catch cases for the customer to realize what was happening.
+                </li>
+                <li>If the customer intentionally wanted to remove a product, they would have to navigate to the product itself, press "skip" (a somewhat hidden
+                    link), then navigate back through all the other menus. </li>
+          </p>
+          <p>
+              <b>Alternative: </b> I proposed that instead of this we simply kept the paradigm of what was shown in the settings page. The user would see a "cancel
+              reorder" or similar element that would allow them to deselect that item. The pros were:
+          <li>Keeps paradigm of existing design, less for the user to learn </li>
+          <li>Keeps "skip" to 1 functionality </li>
+          <li>Allows users to easily remove items if that is their intention</li>
+
+          Unfortunately, due to some outside requirements, my design was eventually not implemented. However through testing this with multiple people, I have often seen
+          them get confused by this "skip" feature, and feel that my intended design was a good alternative.
+          </p>
+      </div>
+
+
+      <div class="row block-text block-header">
+          Mobile space concerns & UI tweaks
+      </div>
+
+      <div class="row block-text">
+          <p>
+              <b>Use case</b>: The smallest popular phone in the market is an old iPhone with rough screen dimension of 330 x 550. This is an extremely small space to work
+              with, and with the addition of various features to the setup UI, it quickly became crowded. I collaborated with our UX lead to come up with
+              multiple ideas on how to save screen real estate. Although space wasn't as much of a concern on desktop, I also
+              made some additional tweaks to improve experience and look.
+
+          <div class="row center">
+              <div class="preview" align="center">
+                  <img name="preview" id="preview" style="height:500px;" src="images/emailsinitsub.png" alt="No Image Loaded"/>
+              </div>
+
+              <div class="divider"> </div>
+
+              <div class="gallery-thumbs" align="center">
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img1').src" id="img1" src="images/emailsinitsub.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img2').src" id="img2" src="images/emailsinitorder.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img3').src" id="img3" src="images/emailsinitdereg.png" alt="Image Not Loaded"/>
+                  <img onmouseover="document.getElementById('preview').src=document.getElementById('img4').src" id="img4" src="images/emailsinitincorrect.png" alt="Image Not Loaded"/>
+              </div><br/>
+          </div>
+
+          <p>
+              <b>Mobile space improvements: </b>
+              <li>Do not allow product name to extend beyond 1 line (use ellipses)</li>
+              <li>Combine text for "33 products found" inside the search bar, instead of on another line</li>
+              <li>Remove the navigation bar if there is only 1 category of item</li>
+              <li>Do not show the 'next' button if no item is selected</li>
+              <li>Fold search bar under when user scrolls up (not implemented due to time constraints)</li>
+          </p>
+
+
+          <p>
+              <b>Desktop improvements: </b>
+              <li>Move "featured" and "most popular" labels to the top of the element, not the side (reduce whitespace)</li>
+              <li>Create the "see more" layout as a simple bullet list</li>
+              <li>Put 'View products' as a bullet into this list, instead of its own separate column</li>
+              <li>Various padding/spacing readjustments</li>
+          </p>
+      </div>
+
+      <div class="row" style="height:100px"> </div>
+      <div id="footer"></div>
+  </body>    
+</html>
